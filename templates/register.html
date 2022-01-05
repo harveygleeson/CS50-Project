@@ -1,0 +1,96 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+    <form class='p-3' action='/register' method='post'>
+        <div class="form-group p-1">
+            <input autocomplete="off" autofocus class="form-control" name="username" placeholder="Username" type="text">
+            {% with messages = get_flashed_messages(category_filter=["username_error"]) %}
+            {% with username_in_use = get_flashed_messages(category_filter=["username_in_use"]) %}
+              {% if username_in_use %}
+                {% for message in username_in_use %}
+                  <div>
+                    <small class='text-muted'>
+                      {{ message }}
+                    </small>
+                  </div>
+                {% endfor %}
+              {% else %}
+                {% for message in messages %}
+                  <div>
+                    <small class='text-muted'>
+                      {{ message }}
+                    </small>
+                  </div>
+                {% endfor %}
+              {% endif %}
+            {% endwith %}
+          {% endwith %}
+        </div>
+
+        <div class="form-group p-1">
+            <input autocomplete="off" autofocus class="form-control" name="email" placeholder="Email" type="text">
+            {% with messages = get_flashed_messages(category_filter=["email_error"]) %}
+            {% with email_in_use = get_flashed_messages(category_filter=["email_in_use"]) %}
+              {% if email_in_use %}
+                {% for message in email_in_use %}
+                  <div>
+                    <small class='text-muted'>
+                      {{ message }}
+                    </small>
+                  </div>
+                {% endfor %}
+              {% else %}
+                {% for message in messages %}
+                  <div>
+                    <small class='text-muted'>
+                      {{ message }}
+                    </small>
+                  </div>
+                {% endfor %}
+              {% endif %}
+            {% endwith %}
+          {% endwith %}
+        </div>
+
+        <div class="form-group p-1">
+            <input class="form-control" name="password" placeholder="Password" type="password">
+            {% with messages = get_flashed_messages(category_filter=["password_error"]) %}
+              {% if messages %}
+                {% for message in messages %}
+                  <div>
+                    <small class='text-muted'>
+                      {{ message }}
+                    </small>
+                  </div>
+                {% endfor %}
+              {% endif %}
+            {% endwith %}
+        </div>
+
+        <div class="form-group p-1">
+            <input class="form-control" name="confirmation" placeholder="Confirm Password" type="password">
+            {% with messages = get_flashed_messages(category_filter=["match_error"]) %}
+              {% if messages %}
+                {% for message in messages %}
+                  <div>
+                    <small class='text-muted'>
+                      {{ message }}
+                    </small>
+                  </div>
+                {% endfor %}
+              {% endif %}
+            {% endwith %}
+        </div>
+
+        <button class="btn-blue m-3" type="submit">Go</button>
+        <div>
+          <small class='text-muted'>
+            Already Have An Account? <a class='ml-2' href='{{ url_for("login") }}'>Sign In</a>
+          </small>
+        </div>
+    </form>
+{% endblock %}

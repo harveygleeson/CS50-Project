@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Hosting
+{% endblock %}
+
+{% block main %}
+
+{% with loc = location %}
+<h1 class='display-4 headings'>Hosting: {{ loc }}</h1>
+{% endwith %}
+
+<p>What's been requested?</p>
+
+{% if not song_ids %}
+
+<div class="sorry">
+  <p>No Requests Yet!</p>
+</div>
+
+{% else %}
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col" colspan='2'>Song</th>
+        <th scope="col">Artist</th>
+        <th scope="col">Album</th>
+      </tr>
+    </thead>
+  <tbody>
+
+    {% for i in range(song_ids|length) %}
+
+    <tr class='hov'>
+        <td scope="row"><img src="{{ (f(song_ids[i])).art }}" width="80" height="80"></td>
+        <td>{{ (f(song_ids[i])).name }}</td>
+        <td>{{ (f(song_ids[i])).artist }}</td>
+        <td>{{ (f(song_ids[i])).album }}</td>
+    </tr>
+
+    {% endfor %}
+
+  </tbody>
+</table>
+
+{% endif %}
+
+
+
+{% endblock %}

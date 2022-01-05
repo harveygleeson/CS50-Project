@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Host
+{% endblock %}
+
+{% block main %}
+<h1 class='display-4 headings'>Host an Event</h1>
+
+<form class='p-3' action='/host' method='post'>
+    <div class="form-group p-1">
+        <input autocomplete="off" autofocus class="form-control" name="location" size='30' placeholder="Where are you hosting?" type="text">
+        {% if get_flashed_messages()%}
+        {% for message in get_flashed_messages() %}
+          <div>
+            <small class='text-muted'>
+              {{ message }}
+            </small>
+          </div>
+        {% endfor %}
+        {% endif %}
+    </div>
+
+    <button class="btn-blue m-3" type="submit">Let's Go</button>
+
+</form>
+
+{% endblock %}

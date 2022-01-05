@@ -1,0 +1,214 @@
+.bg-black {
+    background-color: #000000;
+}
+
+.navbar-custom {
+    background-color: #000000;
+}
+
+.dark-modal {
+  	background-color: #181818;
+    color: white;
+    vertical-align: middle;
+    font-weight:lighter;
+    font-size: 16px;
+    letter-spacing: 2px;
+}
+
+#modalp {
+  font-size: 16px;
+}
+
+p {
+  color: white;
+  vertical-align: middle;
+  font-weight:lighter;
+  font-size: 24px;
+  letter-spacing: 2px;
+}
+
+.sorry p {
+  color: white;
+  vertical-align: middle;
+  font-weight:lighter;
+  font-size: 16px;
+  letter-spacing: 2px;
+}
+
+.flex-border {
+    border-bottom: 1px solid #696969;
+}
+
+.table
+{
+  color: white;
+  font-size: 16px;
+  letter-spacing: 2px;
+}
+.table th
+{
+  letter-spacing: 2px;
+  font-weight: 300;
+}
+
+.table td
+{
+  vertical-align: middle;
+  font-weight:lighter;
+
+}
+
+.td-link
+{
+  color:white
+}
+
+.td-link:hover
+{
+  text-decoration: none;
+  color: silver;
+}
+.hov:hover
+{
+  background-color: #1B1B1B;
+  color:white;
+}
+
+.nav-link
+{
+    color: white;
+    letter-spacing: 2px;
+}
+
+.nav-link:hover
+{
+    color: white;
+}
+
+nav .navbar-brand
+{
+    /* size for brand */
+    font-size: xx-large;
+    font-family: Arial;
+    font-weight: 900;
+    color: #FFFFFF;
+}
+.headings
+{
+    color: White;
+    font-size: 50px;
+    letter-spacing: 2px;
+}
+
+h1.welcome
+{
+    font-size: 60px;
+    padding-bottom: 5px;
+}
+
+hr {
+  border-top: 1px solid white;
+}
+
+.center-box
+{
+    position: absolute;
+    left: 20%;
+    right: 20%;
+    top: 15%;
+    text-align: center;
+    color: white;
+}
+
+.btn-blue
+{
+    background-color: #000000;
+    border: 1px solid grey;
+    color: rgba(255,255,255,1);
+    padding: 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 500px;
+    letter-spacing: 2px;
+    min-width: 140px;
+    text-transform: uppercase;
+    white-space: normal;
+}
+
+.btn-blue:hover
+{
+    background-color: rgba(0,210,250,0.85);
+    color:rgba(255,255,255,1);
+    text-decoration: none;
+
+}
+
+.btn-blue:focus {
+    outline: none;
+}
+
+
+main .form-control
+{
+    /* Center form controls */
+    display: inline-block;
+
+    /* Override Bootstrap's 100% width for form controls */
+    width: auto;
+
+    background-color: black;
+}
+
+.form-control:focus
+{
+    background-color:black;
+}
+
+.text-muted
+{
+    font-size: 11px;
+}
+
+.text-muted a
+{
+    color: white;
+}
+
+.text-muted a:hover
+{
+  text-decoration: none;
+  color: white;
+}
+
+main
+{
+    /* Scroll horizontally as needed */
+    overflow-x: auto;
+
+    /* Center contents */
+    text-align: center;
+}
+
+div.gallery {
+  margin: 5px;
+  border: 1px solid #ccc;
+  float: left;
+  width: 180px;
+}
+
+div.gallery:hover {
+  border: 1px solid #777;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}

@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Locations
+{% endblock %}
+
+{% block main %}
+  <h1 class='display-4 headings pb-3'>Where Are You?</h1>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col" colspan='2'>Location</th>
+        <th scope="col" colspan='2'>Host</th>
+      </tr>
+    </thead>
+  <tbody>
+
+    {% if rows %}
+    {% for row in rows %}
+
+        <tr class='hov'>
+          <td colspan='2'><a href="/search/{{ row.location }}" id="{{ row.location }}" class='td-link'>{{ row.location }}</a></td>
+          <td colspan='2'>{{ row.host }}</td>
+        </tr>
+
+    {% endfor %}
+
+    {% else %}
+
+    <tr class='hov'>
+      <td colspan='4'>Looks like nowhere is hosting yet!</td>
+    </tr>
+
+    {% endif %}
+
+  </tbody>
+  </table>
+
+{% endblock %}

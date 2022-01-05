@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Request
+{% endblock %}
+
+{% block main %}
+
+  <h1 class='display-4 headings'>What do you want to hear?</h1>
+
+  <form class='p-3' action='/search/{{ location }}' method='post'>
+      <div class="form-group p-2">
+          <input autocomplete="off" autofocus class="form-control" name="name" placeholder="Song Title" type="text">
+      </div>
+      <button class="btn-blue m-3" type="submit">Search</button>
+  </form>
+
+{% endblock %}

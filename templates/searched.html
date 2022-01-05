@@ -1,0 +1,76 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Request
+{% endblock %}
+
+{% block main %}
+
+<form class='p-3' action='/search/{{ location }}' method='post'>
+    <div class="form-group p-2">
+        <input autocomplete="off" autofocus class="form-control" name="name" placeholder="Song Title" type="text">
+
+        <button class="btn-blue m-3" type="submit">Search</button>
+    </div>
+</form>
+
+{% if info[0]|length == 0  %}
+
+<div class="sorry">
+  <p>Sorry, no results for {{ name }}</p>
+  <p>Are you sure you spelled it correctly?</p>
+</div>
+
+{% else %}
+
+  <table class="table" id="tableID">
+    <thead>
+      <tr>
+        <th scope="col" colspan='2'>Song</th>
+        <th scope="col">Artist</th>
+        <th scope="col">Album</th>
+      </tr>
+    </thead>
+  <tbody>
+
+    {% for i in range(info[0]|length) %}
+
+    <tr class='hov' data-toggle="modal" data-target="#myModal{{ i }}">
+        <td scope="row"><img src="{{ info[1][i] }}" width="80" height="80"></td>
+        <td>{{ info[3][i] }}</td>
+        <td>{{ info[2][i] }}</td>
+        <td>{{ info[0][i] }}</td>
+        <td hidden> {{ info[4][i]}}
+    </tr>
+
+    <div class="modal fade" id="myModal{{ i }}" role="dialog">
+        <div class="modal-dialog">
+
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header dark-modal">
+              <h4 class="modal-title">Request Submitted</h4>
+            </div>
+            <div class="modal-body dark-modal">
+              <p id="modalp">{{ info[3][i] }}</p>
+            </div>
+            <div class="modal-footer dark-modal">
+              <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    {% endfor %}
+
+  </tbody>
+</table>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="{{url_for('static', filename='searched.js')}}"></script>
+
+{% endif %}
+
+
+{% endblock %}
